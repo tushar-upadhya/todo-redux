@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 
 const Home = () => {
     const [data, setData] = useState("");
-    console.log("data:", data);
+    console.log(data);
 
     const dispatch = useDispatch();
 
@@ -22,14 +22,13 @@ const Home = () => {
                 <section className="mt-3 text-center">
                     <h3>Enter Your Task</h3>
 
-                    <div className="todo col-lg-6 mx-auto d-flex justify-content-between align-items-center">
+                    <div className="todo col-lg-5 mx-auto d-flex justify-content-between align-items-center">
                         <input
                             name="task"
                             value={data}
                             onChange={(e) => setData(e.target.value)}
                             className="form-control"
                         />
-
                         <Button
                             variant="contained"
                             onClick={() => addData()}
@@ -46,5 +45,4 @@ const Home = () => {
         </>
     );
 };
-
 export default Home;

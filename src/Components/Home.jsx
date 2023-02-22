@@ -2,10 +2,19 @@ import React, { useState } from "react";
 import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import Todo from "./Todo";
+import { ADD } from "../redux/Action/action";
+import { useDispatch } from "react-redux";
 
 const Home = () => {
     const [data, setData] = useState("");
     console.log("data:", data);
+
+    const dispatch = useDispatch();
+
+    const addData = () => {
+        dispatch(ADD(data));
+        setData("");
+    };
 
     return (
         <>
@@ -23,6 +32,7 @@ const Home = () => {
 
                         <Button
                             variant="contained"
+                            onClick={() => addData()}
                             style={{ background: "#ee5253" }}
                             className="mx-2"
                         >

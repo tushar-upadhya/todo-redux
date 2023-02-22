@@ -9,5 +9,8 @@ export const todoReducer = (state = Initial_State, action) => {
                 ...state,
                 User_Data: [...state.User_Data, action.payload],
             };
+
+        default:
+            return state;
     }
 };

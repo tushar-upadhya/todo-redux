@@ -4,19 +4,19 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import { Remove, Update_data } from "../redux/actions/action";
+import { Remove, Update_data } from "../redux/Action/action";
 import { useDispatch, useSelector } from "react-redux";
-import { DeleteContext } from "./context/ContextProvider";
+import { DeleteContext } from "../context/contextProvider";
 
 const Todo = () => {
     const { User_data } = useSelector((state) => state.todoReducer);
     // console.log(User_data);
 
-    const { dlttask, setDlettask } = useContext(DeleteContext);
+    const { dlttask, setDlettask } = useContext();
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch(DeleteContext);
 
-    // show modal state
+    //* show modal state
     const [showEye, setShowEye] = useState(false);
 
     //* set value state

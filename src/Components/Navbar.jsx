@@ -7,9 +7,11 @@ import {
     Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import React from "react";
+import React, { useContext } from "react";
+import { DeleteContext } from "../context/contextProvider";
 
 const Navbar = () => {
+    const { dlttask, setDlettask } = useContext(DeleteContext);
     return (
         <>
             <Box sx={{ flexGrow: 1 }}>

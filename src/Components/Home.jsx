@@ -31,7 +31,7 @@ const Home = () => {
                         />
                         <Button
                             variant="contained"
-                            onClick={() => addData()}
+                            onClick={addData}
                             style={{ background: "#ee5253" }}
                             className="mx-2"
                         >

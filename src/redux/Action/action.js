@@ -1,4 +1,5 @@
 export const ADD = (items) => {
+    console.log(items);
     return {
         type: "ADD_DATA",
         payload: items,
@@ -17,5 +18,12 @@ export const Update_data = (items, id) => {
         type: "UPDATE_DATA",
         payload: items,
         d: id,
+    };
+};
+
+export const Del = (id) => {
+    return {
+        type: "DEL_DATA",
+        payload: id,
     };
 };

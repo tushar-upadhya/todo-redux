@@ -9,10 +9,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { DeleteContext } from "../context/contextProvider";
 
 const Todo = () => {
-    const { User_data } = useSelector((state) => state.todoReducer);
+    const { User_Data } = useSelector((state) => state.todoReducer);
     // console.log(User_data);
 
-    const { dlttask, setDlettask } = useContext();
+    // const { dlttask, setDlettask } = useContext();
 
     const dispatch = useDispatch(DeleteContext);
 
@@ -38,7 +38,7 @@ const Todo = () => {
     //* dlt function
     const remove = (id) => {
         dispatch(Remove(id));
-        setDlettask(true);
+        // setDlettask(true);
     };
 
     //* update function
@@ -50,7 +50,7 @@ const Todo = () => {
     return (
         <>
             <div className="todo_data col-lg-5 mx-auto mt-2">
-                {User_data.map((ele, k) => {
+                {User_Data?.map((ele, k) => {
                     return (
                         <>
                             <div

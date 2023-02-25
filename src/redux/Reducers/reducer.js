@@ -5,6 +5,7 @@ const Initial_State = {
 export const todoReducer = (state = Initial_State, action) => {
     switch (action.type) {
         case "ADD_DATA":
+            console.log(action.payload);
             return {
                 ...state,
                 User_Data: [...state.User_Data, action.payload],
@@ -28,6 +29,15 @@ export const todoReducer = (state = Initial_State, action) => {
             return {
                 ...state,
                 User_Data: updateData,
+            };
+        case "DEL_DATA":
+            const DelData = state.User_Data.filter(
+                (ele) => ele.id !== action.payload
+            );
+
+            return {
+                ...state,
+                User_Data: DelData,
             };
 
         default:
